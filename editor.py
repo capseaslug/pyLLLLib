@@ -113,14 +113,24 @@ class AddressCommandEditor:
         selection = self.templates_listbox.curselection()
         if selection:
             template_name = self.templates_listbox.get(selection[0])
-            self.templates_listbox.delete(selection)
+            self.templates_listbox.delete(selection)j
             del self.common_templates[template_name]
 
     def on_template_select(self, event):
         selection = self.templates_listbox.curselection()
-        if selection:
+        if selection:o
             template_name = self.templates_listbox.get(selection[0])
             template_data = self.common_templates.get(template_name, {})
             self.associations_text.delete('1.0', tk.END)
             for key, value in template_data.items():
                 self.associations_text.insert(tk.END, f"{key}: {value}\n")
+                    # Placeholder for future functionality
+
+# Main function to create and run the GUI
+def main():
+    root = tk.Tk()
+    AddressCommandEditor(root)
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()
